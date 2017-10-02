@@ -1,0 +1,19 @@
+
+    Copy the JAR file which contains the Connector implementation to $TOMCAT_HOME/webapps/cycle/WEB-INF/lib.
+    Edit the $TOMCAT_HOME/webapps/cycle/WEB-INF/classes/spring/connector-configurations.xml file and include a variation of the following snippet:
+
+<bean name="innoConnectorDefinition" class="org.camunda.bpm.cycle.entity.ConnectorConfiguration">
+  <property name="name" value="Innovator Connector"/>
+  <property name="connectorClass" value="org.camunda.cycle.innovator_cycle_connector.innovatorConnector"/>
+  <property name="properties">
+    <map>
+	
+	  <entry key="innoRemoteHost" value=""></entry>
+      <entry key="innoRemotePort" value=""></entry>
+      <entry key="innolsrvHost" value=""></entry>
+      <entry key="innolsrvPort" value=""></entry>
+      <entry key="proxyUsername" value=""></entry>
+      <entry key="proxyPassword" value=""></entry>
+    </map>
+  </property>
+</bean>
